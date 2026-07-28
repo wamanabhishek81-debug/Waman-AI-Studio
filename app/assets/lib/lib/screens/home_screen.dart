@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'video_generator.dart';
+import 'create_video.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+
       appBar: AppBar(
         title: const Text(
           "Waman AI Studio",
@@ -15,20 +16,22 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             const Icon(
-              Icons.movie_creation,
-              size: 80,
+              Icons.auto_awesome,
+              size: 90,
               color: Colors.blue,
             ),
 
             const SizedBox(height: 20),
 
             const Text(
-              "Create AI Videos 🚀",
+              "Waman AI Studio 🚀",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 28,
@@ -39,25 +42,28 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 10),
 
             const Text(
-              "AI Video Editing by Waman Graphics",
+              "Create Cinematic AI Videos",
               style: TextStyle(
                 color: Colors.grey,
-                fontSize: 16,
+                fontSize: 17,
               ),
             ),
 
             const SizedBox(height: 30),
 
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const VideoGenerator(),
+                    builder: (context) => const CreateVideo(),
                   ),
                 );
               },
-              child: const Text("Start Creating"),
+              icon: const Icon(Icons.video_call),
+              label: const Text(
+                "Start Creating",
+              ),
             ),
           ],
         ),
