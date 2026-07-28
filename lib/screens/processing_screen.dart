@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'video_preview.dart';
 
 class ProcessingScreen extends StatelessWidget {
   const ProcessingScreen({super.key});
@@ -34,7 +35,7 @@ class ProcessingScreen extends StatelessWidget {
             const SizedBox(height: 15),
 
             const Text(
-              "Please wait while Waman AI Studio generates your cinematic video 🚀",
+              "Waman AI Studio is processing your cinematic video 🚀",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.grey,
@@ -45,9 +46,17 @@ class ProcessingScreen extends StatelessWidget {
             const SizedBox(height: 40),
 
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const VideoPreview(),
+                  ),
+                );
+              },
               icon: const Icon(Icons.play_arrow),
-              label: const Text("Preview Video"),
+              label: const Text("View Generated Video"),
             ),
           ],
         ),
