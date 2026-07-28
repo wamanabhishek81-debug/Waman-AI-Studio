@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'prompt_screen.dart';
 
 class CreateVideo extends StatelessWidget {
   const CreateVideo({super.key});
@@ -30,26 +31,31 @@ class CreateVideo extends StatelessWidget {
             const SizedBox(height: 30),
 
             videoOption(
+              context,
               Icons.movie,
               "Cinematic AI Video",
             ),
 
             videoOption(
+              context,
               Icons.business,
               "Business Advertisement",
             ),
 
             videoOption(
+              context,
               Icons.phone_android,
               "Instagram Reel",
             ),
 
             videoOption(
+              context,
               Icons.image,
               "Photo To Video",
             ),
 
             videoOption(
+              context,
               Icons.mic,
               "AI Voice Over",
             ),
@@ -59,14 +65,26 @@ class CreateVideo extends StatelessWidget {
     );
   }
 
-  Widget videoOption(IconData icon, String title) {
+  Widget videoOption(
+      BuildContext context,
+      IconData icon,
+      String title) {
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           minimumSize: const Size(double.infinity, 55),
         ),
-        onPressed: () {},
+
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PromptScreen(),
+            ),
+          );
+        },
+
         icon: Icon(icon),
         label: Text(title),
       ),
