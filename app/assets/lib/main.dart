@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const WamanAIStudio());
@@ -10,18 +11,12 @@ class WamanAIStudio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Waman AI Studio',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Waman AI Studio'),
-        ),
-        body: const Center(
-          child: Text(
-            'Welcome to Waman AI Studio 🚀',
-            style: TextStyle(fontSize: 22),
-          ),
-        ),
+      theme: ThemeData(
+        brightness: Brightness.dark,
       ),
+      home: const HomeScreen(),
     );
   }
 }
