@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'processing_screen.dart';
 
 class PromptScreen extends StatelessWidget {
   const PromptScreen({super.key});
@@ -31,9 +32,37 @@ class PromptScreen extends StatelessWidget {
 
             TextField(
               maxLines: 5,
-              style: const TextStyle(
-                color: Colors.white,
-              ),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText:
-                    "Example: Create a cinematic advertisement for my
+                    "Example: Create cinematic advertisement for my business...",
+                hintStyle: const TextStyle(color: Colors.grey),
+                filled: true,
+                fillColor: Colors.white10,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const ProcessingScreen(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.auto_awesome),
+              label: const Text("Generate AI Video"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
