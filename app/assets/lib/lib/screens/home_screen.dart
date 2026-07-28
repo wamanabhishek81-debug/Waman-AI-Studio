@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'video_generator.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,7 +24,9 @@ class HomeScreen extends StatelessWidget {
               size: 80,
               color: Colors.blue,
             ),
+
             const SizedBox(height: 20),
+
             const Text(
               "Create AI Videos 🚀",
               style: TextStyle(
@@ -32,7 +35,9 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             const SizedBox(height: 10),
+
             const Text(
               "AI Video Editing by Waman Graphics",
               style: TextStyle(
@@ -40,9 +45,18 @@ class HomeScreen extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+
             const SizedBox(height: 30),
+
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const VideoGenerator(),
+                  ),
+                );
+              },
               child: const Text("Start Creating"),
             ),
           ],
